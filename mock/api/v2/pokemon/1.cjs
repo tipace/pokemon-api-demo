@@ -1,7 +1,7 @@
 module.exports = {
   height: 7,
   id: 1,
-  name: 'bulbasaur',
+  name: 'bulbasaur3',
   sprites: {
     back_default:
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png',

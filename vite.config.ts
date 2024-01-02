@@ -4,22 +4,7 @@ import { fileURLToPath, URL } from 'node:url';
 import components from 'unplugin-vue-components/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import { VarletUIResolver } from 'unplugin-vue-components/resolvers';
-
-const myPlugin = (options: any = {}) => ({
-  name: 'configure-server',
-  configureServer(server) {
-    server.middlewares.use((req, res, next) => {
-      console.log(
-        req.url,
-        req.method
-        // req.rawHeaders,
-        // req._parsedUrl
-        // req
-      );
-      next();
-    });
-  },
-});
+import localMock from 'vite-plugin-local-mock';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -37,7 +22,7 @@ export default defineConfig({
     autoImport({
       resolvers: [VarletUIResolver({ autoImport: true })],
     }),
-    myPlugin({ dir: 'mock' }),
+    localMock(),
   ],
 
   resolve: {
