@@ -21,7 +21,11 @@ const case2 = {
       name({ offset }) {
         return +offset > 0 ? 'bulbasaur1' : 'bulbasaur0';
       },
-      url: 'https://pokeapi.co/api/v2/pokemon/1/',
+      url({ offset }) {
+        return +offset > 1
+          ? 'https://pokeapi.co/api/v2/pokemon/1/'
+          : 'https://pokeapi.co/api/v2/pokemon/2/';
+      },
     },
   ],
 };
@@ -39,4 +43,4 @@ const case3 = ({ offset }) => ({
   ],
 });
 
-module.exports = case1;
+module.exports = case2;

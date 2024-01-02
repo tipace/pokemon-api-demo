@@ -46,5 +46,5 @@ export const queryPokemon = (id: number) => {
 };
 
 export const testPost = (id: number) => {
-  return http.post(`/api/v2/pokemon/post`, { id });
+  return http.post(`/api/v2/pokemon/post/${id}`, { id });
 };
